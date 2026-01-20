@@ -22,19 +22,19 @@ Pulse `010101` for ~1/60 sec (default):
 ft245-bitbang-cli 010101
 ```
 
-Pulse `010101` for 60 ms:
+Pulse `010101` for 100 ms(1/10 sec):
 ```
-ft245-bitbang-cli 010101 60
+ft245-bitbang-cli 010101 100
 ```
 
 Use device index 1:
 ```
-ft245-bitbang-cli 010101 60 1
+ft245-bitbang-cli 010101 100 1
 ```
 
 Active-low (invert outputs):
 ```
-ft245-bitbang-cli 010101 60 1 --inv
+ft245-bitbang-cli 010101 100 1 --inv
 ```
 
 ## Download
