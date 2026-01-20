@@ -2,16 +2,29 @@
 #include <cstdlib>
 #include <iostream>
 #include <string>
+#include <cstring>
 
 #include "platform.h"
 
 // D2XX header (from FTDI official package)
 #include "ftd2xx.h"
 
-static void print_usage(const char* exe) {
+static const char* app_name_only(const char* argv0) {
+  if (!argv0 || !*argv0) return "ft245-bitbang-cli";
+
+  const char* s1 = std::strrchr(argv0, '/');
+  const char* s2 = std::strrchr(argv0, '\\');
+
+  const char* s = s1;
+  if (s2 && (!s || s2 > s)) s = s2;
+
+  return s ? (s + 1) : argv0;
+}
+
+static void print_usage(const char* app) {
   std::cout
     << "Usage:\n"
-    << "  " << exe << " <bits6> [duration_ms] [index] [--inv]\n\n"
+    << "  " << app << " <bits6> [duration_ms] [index] [--inv]\n\n"
     << "Arguments:\n"
     << "  <bits6>        6-bit binary string, e.g. 010101\n"
     << "                Leftmost is D5, rightmost is D0.\n"
@@ -21,10 +34,10 @@ static void print_usage(const char* exe) {
     << "  --inv          Invert output (active-low helper). Output becomes (~bits) & 0x3F\n"
     << "  -h, --help     Show this help\n\n"
     << "Examples:\n"
-    << "  " << exe << " 010101\n"
-    << "  " << exe << " 010101 60\n"
-    << "  " << exe << " 010101 60 1\n"
-    << "  " << exe << " 010101 60 1 --inv\n";
+    << "  " << app << " 010101\n"
+    << "  " << app << " 010101 60\n"
+    << "  " << app << " 010101 60 1\n"
+    << "  " << app << " 010101 60 1 --inv\n";
 }
 
 static bool parse_bits6_to_mask(const std::string& bits, uint8_t& out_mask) {
@@ -56,7 +69,7 @@ static bool ft_ok(FT_STATUS st, const char* what) {
 
 int main(int argc, char** argv) {
   if (argc < 2) {
-    print_usage(argv[0]);
+    print_usage(app_name_only(argv[0]));
     return 1;
   }
 
