@@ -35,9 +35,9 @@ static void print_usage(const char* app) {
     << "  -h, --help     Show this help\n\n"
     << "Examples:\n"
     << "  " << app << " 010101\n"
-    << "  " << app << " 010101 60\n"
-    << "  " << app << " 010101 60 1\n"
-    << "  " << app << " 010101 60 1 --inv\n";
+    << "  " << app << " 010101 100\n"
+    << "  " << app << " 010101 100 1\n"
+    << "  " << app << " 010101 100 1 --inv\n";
 }
 
 static bool parse_bits6_to_mask(const std::string& bits, uint8_t& out_mask) {
