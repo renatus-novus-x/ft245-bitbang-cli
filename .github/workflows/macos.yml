@@ -18,7 +18,7 @@ jobs:
       run: |
         mkdir build
         cd  build
-        cmake ../ -G Xcode -DFTDI_D2XX_ROOT="../third_party/ftdi"
+        cmake ../ -G Xcode -DFTDI_D2XX_ROOT="../third_party/ftdi/macos"
         cmake --build . --target ALL_BUILD --config Release
         cmake --build . --target ALL_BUILD --config Debug
 
