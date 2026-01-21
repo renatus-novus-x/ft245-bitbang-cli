@@ -75,3 +75,7 @@ if(UNIX AND NOT APPLE)
   endif()
 endif()
 
+if(CMAKE_SYSTEM_NAME MATCHES "Darwin")
+#  add_definitions(-std=gnu++17)
+  set(CMAKE_OSX_ARCHITECTURES "x86_64")
+endif()
