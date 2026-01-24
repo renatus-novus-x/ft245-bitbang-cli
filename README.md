@@ -1,5 +1,6 @@
 [![windows](https://github.com/renatus-novus-x/ft245-bitbang-cli/workflows/windows/badge.svg)](https://github.com/renatus-novus-x/ft245-bitbang-cli/actions?query=workflow%3Awindows)
 [![macos](https://github.com/renatus-novus-x/ft245-bitbang-cli/workflows/macos/badge.svg)](https://github.com/renatus-novus-x/ft245-bitbang-cli/actions?query=workflow%3Amacos)
+[![ubuntu](https://github.com/renatus-novus-x/ft245-bitbang-cli/workflows/ubuntu/badge.svg)](https://github.com/renatus-novus-x/ft245-bitbang-cli/actions?query=workflow%3Aubuntu)
 
 # ft245-bitbang-cli
 Cross-platform CLI to pulse 6-bit FT245 async bit-bang outputs via FTDI D2XX (binary pattern + duration, optional device index, active-low invert).
