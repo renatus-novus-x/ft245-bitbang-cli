@@ -42,4 +42,4 @@ ft245-bitbang-cli 010101 100 1 --inv
 ## Download
 - [ft245-bitbang-cli.exe (windows)](https://raw.githubusercontent.com/renatus-novus-x/ft245-bitbang-cli/main/bin/ft245-bitbang-cli.exe)
 - [ft245-bitbang-cli-macos.zip (macos)](https://raw.githubusercontent.com/renatus-novus-x/ft245-bitbang-cli/main/bin/ft245-bitbang-cli-macos.zip)
-
+- [ft245-bitbang-cli (ubuntu)](https://raw.githubusercontent.com/renatus-novus-x/ft245-bitbang-cli/main/bin/ft245-bitbang-cli)
